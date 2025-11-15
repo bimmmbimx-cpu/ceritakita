@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tentangkita</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> 
+</head>
+<body>
+
+    <div id="login-screen">
+        <div class="login-box">
+            <h2>masukin id passwordnya disini ya</h2>
+            <input type="text" id="username" placeholder="Masukkan ID">
+            <input type="password" id="password" placeholder="Masukkan Password">
+            <button onclick="checkLogin()">MASUK</button>
+            <p id="login-message"></p>
+        </div>
+    </div>
+
+    <header style="display: none;">
+        <h1>Cerita Cinta [Nama Anda] & [Nama Pasangan]</h1>
+        <p>Sejak [Tanggal Mulai Hubungan]</p>
+    </header>
+
+    <section id="hero" style="display: none;">
+        <h2 id="countdown-title">Sudah Berapa Lama Kita Bersama:</h2>
+        <div id="countdown"></div>
+    </section>
+
+    <section id="timeline" style="display: none;">
+        <h2>Momen-Momen Terbaik</h2>
+        </section>
+
+    <section id="gallery" style="display: none;">
+        <h2>Galeri Kenangan</h2>
+
+        <div class="upload-box">
+            <form method="POST" action="{{ url_for('upload_file') }}" enctype="multipart/form-data">
+                <label for="file-upload" class="upload-label">
+                    Pilih Foto Kenangan dari Komputer Anda
+                    <span class="upload-icon">⬆️ Unggah Foto</span>
+                </label>
+                <input type="file" id="file-upload" name="file" accept="image/*" style="display:none;">
+                <button type="submit" class="upload-button">Upload Sekarang</button>
+            </form>
+        </div>
+
+        <div id="photo-grid" class="photo-grid">
+            {% for image in images %}
+                <img src="{{ url_for('static', filename='images/' + image) }}" alt="Foto Kenangan" class="gallery-img">
+            {% endfor %}
+        </div>
+    </section>
+
+    <footer style="display: none;">
+        <p>&copy; 2025 Kenangan Kita Berdua</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script> 
+</body>
+</html>

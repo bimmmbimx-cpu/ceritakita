@@ -1,0 +1,121 @@
+/* style.css */
+
+/* 1. OVERLAY GELAP (Di Atas Background Foto) */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Hitam dengan transparansi 30% */
+    z-index: -1;
+}
+
+/* 2. DESAIN GLOBAL & BACKGROUND FOTO */
+/* 2. DESAIN GLOBAL & BACKGROUND FOTO */
+body {
+    /* ... */
+    /* GANTI NAMA FILE FOTO ANDA DI SINI */
+    background-image: url('piw.jpg'); 
+    /* ... */
+}
+
+header {
+    background-color: #e91e63;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+header h1 { margin-top: 0; font-size: 3em; }
+
+/* 3. DESAIN KONTEN UTAMA (SEMI-TRANSPARAN) */
+section {
+    padding: 40px 10%;
+    margin: 20px auto;
+    max-width: 1000px;
+    
+    /* Putih dengan transparansi 15% agar gambar latar terlihat */
+    background-color: rgba(255, 255, 255, 0.85); 
+    
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+section h2 { color: #e91e63; text-align: center; margin-bottom: 30px; }
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #e91e63;
+    color: white;
+    margin-top: 40px;
+}
+
+/* 4. DESAIN LOGIN SCREEN */
+#login-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gunakan background transparan agar gambar terlihat */
+    background-color: transparent; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; 
+}
+.login-box {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 350px;
+    width: 90%;
+}
+.login-box input, .login-box button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+.login-box button {
+    background-color: #e91e63;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+.login-box button:hover {
+    background-color: #c2185b;
+}
+
+/* 5. DESAIN DURASI BULAN & TIMELINE ITEM */
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+.time-box {
+    background-color: #ffb3c1;
+    color: #e91e63;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: center;
+    min-width: 120px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.time-box span {
+    display: block;
+    font-size: 0.4em;
+    font-weight: normal;
+}
